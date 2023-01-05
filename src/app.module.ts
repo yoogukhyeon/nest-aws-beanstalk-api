@@ -5,6 +5,7 @@ import { RequestMethod } from '@nestjs/common';
 import { BoardsModule } from './boards/boards.module';
 import { AuthModule } from './auth/auth.module';
 import { KnexMultiConnectionsModule } from './model/knex.module';
+import { appController } from './app.controller';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -15,7 +16,7 @@ import { KnexMultiConnectionsModule } from './model/knex.module';
     AuthModule,
     BoardsModule,
   ],
-  controllers: [],
+  controllers: [appController],
   providers: [],
 })
 export class AppModule implements NestModule {
